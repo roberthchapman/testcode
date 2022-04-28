@@ -1,0 +1,6 @@
+.cardres {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:flex-start;
+    width: calc(100vw - 250px);
+}

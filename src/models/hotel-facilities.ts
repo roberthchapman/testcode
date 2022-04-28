@@ -1,6 +1,6 @@
 
-export const SelectFacilities = [
-    {value: '', text: 'No filter'},
+export const HotelFacilities = [
+    // {value: '', text: 'No filter'},
     {value: 'Bar', text: 'Bar'},
     {value: 'Fitness Centre/Gym', text: 'Fitness Centre/Gym'},
     {value: 'Free Parking', text: 'Free Parking'},

@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { Holidays } from './components';
 
 function App() {

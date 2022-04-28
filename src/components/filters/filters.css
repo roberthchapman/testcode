@@ -1,0 +1,13 @@
+.filterContainer {
+    margin-left: 15px;
+    width: 250px;
+    border-right: 1px solid black;
+}
+
+.filter {
+    
+    margin-bottom: 15px;
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-evenly; */
+}

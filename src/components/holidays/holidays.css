@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.header {
+    margin-left: 15px;
+}
+
+h2 {
+    text-align: center;
+}
+

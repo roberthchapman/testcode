@@ -1,7 +1,9 @@
+import moment from 'moment';
 import React from 'react';
 import DatePicker from 'react-datepicker';
-import { SelectLocations } from '../models/locations';
-import "./style.css";
+import { SelectLocations } from '../../models/locations';
+import "../dropdown-style.css";
+import "./search.css";
 
 export interface IProps {
     onSearch: (location: string, date: Date) => void;
@@ -11,7 +13,7 @@ export interface IProps {
 export const Search = ({onSearch, onChangeSearch}: IProps) => {
     const [location, setLocation] = React.useState<string>('');
     const [date, setDate] = React.useState<Date | null>(null);
-    const [minDate] = React.useState<Date>(new Date(Date()));
+    const [minDate] = React.useState<Date>(moment().add(1, 'd').toDate());
 
     const onClick = () => {
         if(location && date) {
@@ -20,7 +22,7 @@ export const Search = ({onSearch, onChangeSearch}: IProps) => {
     }
 
     return(
-        <div>
+        <div className='search'>
             <select
                 value={location}
                 onChange={({ target: { value } }) => { setLocation(value); onChangeSearch();}}
@@ -35,10 +37,9 @@ export const Search = ({onSearch, onChangeSearch}: IProps) => {
                 placeholderText='Please select a date'
                 selected={date ? date : null}
                 minDate={minDate}
-                todayButton="Select Today"
                 onChange={(date: Date) => { setDate(date); onChangeSearch();}}
             />
-            <button onClick={onClick}>Search</button>
+            <button onClick={onClick} disabled={location.length === 0 || date === null}>Search</button>
         </div>
     )
 }

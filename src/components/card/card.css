@@ -7,10 +7,37 @@
     margin: 3px 6px;
     display: flex;
     flex-flow: column nowrap;
-    justify-content:space-around;
+    justify-content:flex-start;
 }
 
 .image img {
     max-width: 500px;
     width: 500px;
+}
+
+.chip {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: default;
+    outline: none;
+    padding: 0;
+    color: #333333;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.chip-content {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    white-space: nowrap;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: small;
 }

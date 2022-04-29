@@ -1,5 +1,6 @@
 import { IHotelResult } from "../../models/hotel";
 import NumberFormat from 'react-number-format';
+import { FaStar } from "react-icons/fa";
 import "./card.css";
 
 interface IProps {
@@ -25,10 +26,10 @@ export const ResultCard = ({hotelResult}: IProps) => {
                         <NumberFormat value={hotelResult.totalPrice} thousandSeparator decimalScale={2} prefix={currencySymbol} displayType='text' />
                     </div>
                     <div>
-                        Star Rating:
-                        <span>{hotelResult.hotel.content.starRating}</span>
+                        Star Rating: {new Array(Number(hotelResult.hotel.content.starRating)).fill(null)
+                        .map(() => (<FaStar/>))}
                     </div>
                 </div>
-                <div>Hotel Facilities{hotelResult.hotel.content.hotelFacilities.map(x => <div key={x}>{x} </div>)}</div>
+                <div>Hotel Facilities{hotelResult.hotel.content.hotelFacilities.map(x => <div><div className="chip" key={x}><div className="chip-content">{x} </div></div></div>)}</div>
            </div>)
 }
